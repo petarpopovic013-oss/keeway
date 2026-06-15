@@ -1,0 +1,1 @@
+.color-ball{border:1px solid rgba(0,0,0,.8);display:block;position:relative}.color-ball:after{border:5px solid #ffea00;bottom:5px;content:" ";left:5px;position:absolute;right:5px;top:5px;z-index:-1}
