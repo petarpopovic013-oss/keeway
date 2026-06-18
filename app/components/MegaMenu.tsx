@@ -9,6 +9,7 @@ const CATEGORIES = [
   "Scooters",
   "Scooters XDV",
   "Street fighter",
+  "Street Retro",
   "Custom V-Twin",
 ];
 
@@ -17,6 +18,7 @@ const CATEGORY_DISPLAY_NAMES: Record<string, string> = {
   "Scooters": "SCOOTERS",
   "Scooters XDV": "SCOOTERS XDV",
   "Street fighter": "STREET FIGHTER",
+  "Street Retro": "STREET RETRO",
   "Custom V-Twin": "CUSTOM V-TWIN",
 };
 
@@ -144,19 +146,29 @@ export default function MegaMenu({ isOpen, onClose, offsetLeft = 0 }: MegaMenuPr
 
         {/* Image Column & Button - Always visible below on mobile, to the right on desktop */}
         <div className="flex-1 mt-8 lg:mt-0 lg:pl-8 flex flex-col lg:flex-row items-center justify-center lg:justify-start pt-4 lg:pt-8 pb-10 lg:pb-8 border-t lg:border-t-0 border-gray-100 lg:h-full">
-          {activeMotorcycle && activeMotorcycle.image_url ? (
-            <div className="flex flex-col items-center justify-start w-full lg:h-full">
+          <div className="flex flex-col items-center justify-start w-full lg:h-full">
+            {activeMotorcycle && activeMotorcycle.image_url ? (
               <div className="relative w-full max-w-[400px] lg:max-w-none aspect-[4/3] lg:aspect-auto lg:h-full lg:flex-1 mb-6 lg:mb-0">
-                <Image
-                  src={activeMotorcycle.image_url}
-                  alt={activeMotorcycle.name}
-                  fill
-                  className="object-contain lg:object-left"
-                  sizes="(max-width: 768px) 100vw, 600px"
-                />
+                <Link href={`/motocikli/${activeMotorcycle.slug}`} onClick={onClose} className="block w-full h-full">
+                  <Image
+                    src={activeMotorcycle.image_url}
+                    alt={activeMotorcycle.name}
+                    fill
+                    className="object-contain lg:object-left"
+                    sizes="(max-width: 768px) 100vw, 600px"
+                  />
+                </Link>
               </div>
-              
-              {/* GO MODEL button - shown only on mobile */}
+            ) : (
+              <div className="relative w-full max-w-[400px] lg:max-w-none aspect-[4/3] lg:aspect-auto lg:h-full lg:flex-1 mb-6 lg:mb-0 flex items-center justify-center bg-gray-50 border border-dashed border-gray-200">
+                <Link href={activeMotorcycle ? `/motocikli/${activeMotorcycle.slug}` : '#'} onClick={onClose} className="block w-full h-full flex items-center justify-center">
+                  <span className="text-gray-400 font-zuume font-normal italic">Uskoro slika modela...</span>
+                </Link>
+              </div>
+            )}
+            
+            {/* GO MODEL button - shown only on mobile */}
+            {activeMotorcycle && (
               <Link 
                 href={`/motocikli/${activeMotorcycle.slug}`}
                 onClick={onClose}
@@ -164,10 +176,8 @@ export default function MegaMenu({ isOpen, onClose, offsetLeft = 0 }: MegaMenuPr
               >
                 Idi na model
               </Link>
-            </div>
-          ) : (
-            <div className="text-gray-300 font-zuume font-normal italic h-[200px] lg:h-full flex items-center">Uskoro slika modela...</div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </div>

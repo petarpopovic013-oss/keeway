@@ -22,7 +22,7 @@ export default function ExpandableDescription({ text }: { text: string }) {
       {isLong && (
         <button 
           onClick={() => setIsExpanded(!isExpanded)}
-          className="mt-6 font-zuume font-normal italic text-sm text-[#42D2F2] uppercase tracking-wider border-b-2 border-[#42D2F2] pb-0.5 hover:text-black hover:border-black transition-colors"
+          className="mt-6 font-zuume font-bold text-sm text-[#F54308] uppercase tracking-wider border-b-2 border-[#F54308] pb-0.5 hover:text-black hover:border-black transition-colors"
         >
           {isExpanded ? 'Prikaži manje' : 'Prikaži više'}
         </button>

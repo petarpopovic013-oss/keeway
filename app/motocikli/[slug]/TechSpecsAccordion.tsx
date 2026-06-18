@@ -43,20 +43,20 @@ export default function TechSpecsAccordion({ categories }: TechSpecsAccordionPro
   return (
     <div className="w-full max-w-4xl mx-auto my-20 px-4">
       <div className="flex flex-col items-center mb-10">
-        <h2 className="text-2xl md:text-3xl font-zuume font-normal italic text-black uppercase tracking-tight mb-6 text-center ![text-shadow:none] ![-webkit-text-stroke:0]">
+        <h2 className="text-2xl md:text-3xl font-zuume font-bold text-black uppercase tracking-tight mb-6 text-center">
           TEHNIČKE SPECIFIKACIJE
         </h2>
         
         <div className="flex gap-2 md:gap-4 w-full justify-center md:justify-end">
           <button 
             onClick={collapseAll}
-            className="flex items-center gap-1 md:gap-2 border border-gray-300 rounded-full px-3 md:px-4 py-1.5 text-[10px] md:text-xs font-zuume font-normal italic font-medium hover:bg-gray-50 transition-colors"
+            className="flex items-center gap-1 md:gap-2 border border-gray-300 rounded-full px-3 md:px-4 py-1.5 text-[10px] md:text-xs font-zuume font-medium hover:bg-gray-50 transition-colors"
           >
             Skupi sve <ChevronUp className="w-3 h-3" />
           </button>
           <button 
             onClick={expandAll}
-            className="flex items-center gap-1 md:gap-2 border border-gray-300 rounded-full px-3 md:px-4 py-1.5 text-[10px] md:text-xs font-zuume font-normal italic font-medium hover:bg-gray-50 transition-colors"
+            className="flex items-center gap-1 md:gap-2 border border-gray-300 rounded-full px-3 md:px-4 py-1.5 text-[10px] md:text-xs font-zuume font-medium hover:bg-gray-50 transition-colors"
           >
             Proširi sve <ChevronDown className="w-3 h-3" />
           </button>
@@ -73,7 +73,7 @@ export default function TechSpecsAccordion({ categories }: TechSpecsAccordionPro
                 onClick={() => toggleCategory(cat.title)}
                 className="w-full py-6 flex items-center justify-between text-left hover:bg-gray-50/50 transition-colors group"
               >
-                <span className="font-zuume font-normal italic text-[17px] text-[#222]">{cat.title}</span>
+                <span className="font-zuume font-bold text-[17px] text-[#222]">{cat.title}</span>
                 <div className="shrink-0 ml-4 text-[#222] transition-transform group-hover:scale-110">
                   {isOpen ? (
                     <CloseIcon className="w-6 h-6 stroke-[2.5]" />
@@ -95,10 +95,10 @@ export default function TechSpecsAccordion({ categories }: TechSpecsAccordionPro
                     <div className="pb-8 pt-2 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-8">
                       {cat.items.map((item, itemIdx) => (
                         <div key={itemIdx} className="flex flex-col">
-                          <span className="text-[15px] font-zuume font-normal italic text-[#333] mb-1.5">
+                          <span className="text-[15px] font-zuume font-bold text-[#333] mb-1.5">
                             {item.label}
                           </span>
-                          <span className="text-[15px] font-zuume font-normal italic text-gray-500">
+                          <span className="text-[15px] font-zuume text-gray-500">
                             {item.value}
                           </span>
                         </div>

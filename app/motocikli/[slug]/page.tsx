@@ -21,12 +21,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (!motorcycle) {
     return {
-      title: 'Motorcycle Not Found - Keeway',
+      title: 'Motorcycle Not Found - Keeway Srbija',
     };
   }
 
   return {
-    title: `${motorcycle.name} - Keeway`,
+    title: `${motorcycle.name} - Keeway Srbija`,
     description: motorcycle.short_description || `Otkrijte detalje za model ${motorcycle.name}.`,
   };
 }
@@ -167,7 +167,7 @@ export default async function MotorcyclePage({ params }: { params: Promise<{ slu
     });
   }
 
-  const cleanName = motorcycle.name.replace('Keeway ', '').replace('MBP ', '');
+  const cleanName = motorcycle.name.replace('Keeway ', '').replace('', '');
 
   return (
     <>
@@ -177,20 +177,26 @@ export default async function MotorcyclePage({ params }: { params: Promise<{ slu
         {/* Hero Section */}
         <section className="w-full flex flex-col items-center pt-8 pb-12 px-4">
           <div className="text-center mb-6 md:mb-10 w-full">
-            <h1 className="text-3xl md:text-5xl font-zuume font-normal italic text-black uppercase tracking-tight break-words ![text-shadow:none] ![-webkit-text-stroke:0]">
+            <h1 className="text-3xl md:text-5xl font-zuume font-bold text-black uppercase tracking-tight break-words">
               {cleanName}
             </h1>
           </div>
 
           <div className="relative w-full max-w-5xl h-[30vh] md:h-[60vh] mb-8 md:mb-12">
-            <Image
-              src={motorcycle.image_url}
-              alt={motorcycle.name}
-              fill
-              className="object-contain"
-              priority
-              sizes="100vw"
-            />
+            {motorcycle.image_url ? (
+              <Image
+                src={motorcycle.image_url}
+                alt={motorcycle.name}
+                fill
+                className="object-contain"
+                priority
+                sizes="100vw"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center bg-gray-100 text-gray-400 font-saira uppercase tracking-widest text-sm">
+                Slika nije dostupna
+              </div>
+            )}
           </div>
 
           {/* Key Specs Bar */}
@@ -199,7 +205,7 @@ export default async function MotorcyclePage({ params }: { params: Promise<{ slu
               <span className="text-[10px] md:text-[10px] font-saira font-bold text-gray-500 uppercase tracking-widest mb-1">
                 Početna Cena
               </span>
-              <span className="text-sm md:text-base font-zuume font-normal italic text-black">
+              <span className="text-sm md:text-base font-zuume font-bold text-black">
                 {motorcycle.price ? `€${motorcycle.price.toLocaleString()}` : 'N/A'}
               </span>
             </div>
@@ -207,7 +213,7 @@ export default async function MotorcyclePage({ params }: { params: Promise<{ slu
               <span className="text-[10px] md:text-[10px] font-saira font-bold text-gray-500 uppercase tracking-widest mb-1">
                 Zapremina
               </span>
-              <span className="text-sm md:text-base font-zuume font-normal italic text-black">
+              <span className="text-sm md:text-base font-zuume font-bold text-black">
                 {motorcycle.displacement ? `${motorcycle.displacement} cc` : 'N/A'}
               </span>
             </div>
@@ -215,7 +221,7 @@ export default async function MotorcyclePage({ params }: { params: Promise<{ slu
               <span className="text-[10px] md:text-[10px] font-saira font-bold text-gray-500 uppercase tracking-widest mb-1">
                 Snaga
               </span>
-              <span className="text-sm md:text-base font-zuume font-normal italic text-black">
+              <span className="text-sm md:text-base font-zuume font-bold text-black">
                 {motorcycle.power || 'N/A'}
               </span>
             </div>
@@ -223,7 +229,7 @@ export default async function MotorcyclePage({ params }: { params: Promise<{ slu
               <span className="text-[10px] md:text-[10px] font-saira font-bold text-gray-500 uppercase tracking-widest mb-1">
                 Maks. Obrtni moment
               </span>
-              <span className="text-sm md:text-base font-zuume font-normal italic text-black">
+              <span className="text-sm md:text-base font-zuume font-bold text-black">
                 {motorcycle.max_torque || 'N/A'}
               </span>
             </div>
@@ -233,10 +239,10 @@ export default async function MotorcyclePage({ params }: { params: Promise<{ slu
         {/* Introduction Section */}
         <section className="bg-white w-full py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-zuume font-normal italic text-black uppercase tracking-tight mb-6 ![text-shadow:none] ![-webkit-text-stroke:0]">
+            <h2 className="text-2xl md:text-3xl font-zuume font-bold text-black uppercase tracking-tight mb-6">
               OPIS
             </h2>
-            <h3 className="text-lg md:text-xl font-zuume font-normal italic text-black mb-4">
+            <h3 className="text-lg md:text-xl font-zuume font-bold text-black mb-4">
               Keeway {cleanName}
             </h3>
             <ExpandableDescription text={motorcycle.short_description || ""} />
