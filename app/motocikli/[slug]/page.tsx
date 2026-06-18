@@ -177,12 +177,12 @@ export default async function MotorcyclePage({ params }: { params: Promise<{ slu
         {/* Hero Section */}
         <section className="w-full flex flex-col items-center pt-8 pb-12 px-4">
           <div className="text-center mb-6 md:mb-10 w-full">
-            <h1 className="text-3xl md:text-5xl font-zuume font-bold text-black uppercase tracking-tight break-words">
+            <h1 className="text-3xl md:text-5xl font-zuume font-normal italic text-black uppercase tracking-tight break-words">
               {cleanName}
             </h1>
           </div>
 
-          <div className="relative w-full max-w-5xl h-[30vh] md:h-[60vh] mb-8 md:mb-12">
+          <div className="relative w-full max-w-4xl h-[25vh] md:h-[45vh] mb-6 md:mb-8">
             {motorcycle.image_url ? (
               <Image
                 src={motorcycle.image_url}
@@ -202,34 +202,34 @@ export default async function MotorcyclePage({ params }: { params: Promise<{ slu
           {/* Key Specs Bar */}
           <div className="w-full bg-white shadow-sm border-y md:border md:border-gray-100 max-w-5xl mx-auto md:rounded-md grid grid-cols-2 md:grid-cols-4 gap-y-6 md:gap-y-0 py-6 px-4">
             <div className="flex flex-col px-2 md:px-4 border-r border-gray-100 text-center md:text-left">
-              <span className="text-[10px] md:text-[10px] font-saira font-bold text-gray-500 uppercase tracking-widest mb-1">
+              <span className="text-[10px] md:text-[10px] font-saira font-bold text-track-cyan uppercase tracking-widest mb-1">
                 Početna Cena
               </span>
-              <span className="text-sm md:text-base font-zuume font-bold text-black">
+              <span className="text-sm md:text-base font-saira font-bold not-italic text-gray-500">
                 {motorcycle.price ? `€${motorcycle.price.toLocaleString()}` : 'N/A'}
               </span>
             </div>
             <div className="flex flex-col px-2 md:px-4 md:border-r md:border-gray-100 text-center md:text-left">
-              <span className="text-[10px] md:text-[10px] font-saira font-bold text-gray-500 uppercase tracking-widest mb-1">
+              <span className="text-[10px] md:text-[10px] font-saira font-bold text-track-cyan uppercase tracking-widest mb-1">
                 Zapremina
               </span>
-              <span className="text-sm md:text-base font-zuume font-bold text-black">
+              <span className="text-sm md:text-base font-saira font-bold not-italic text-gray-500">
                 {motorcycle.displacement ? `${motorcycle.displacement} cc` : 'N/A'}
               </span>
             </div>
             <div className="flex flex-col px-2 md:px-4 border-r border-gray-100 md:border-none text-center md:text-left">
-              <span className="text-[10px] md:text-[10px] font-saira font-bold text-gray-500 uppercase tracking-widest mb-1">
+              <span className="text-[10px] md:text-[10px] font-saira font-bold text-track-cyan uppercase tracking-widest mb-1">
                 Snaga
               </span>
-              <span className="text-sm md:text-base font-zuume font-bold text-black">
+              <span className="text-sm md:text-base font-saira font-bold not-italic text-gray-500">
                 {motorcycle.power || 'N/A'}
               </span>
             </div>
             <div className="flex flex-col px-2 md:px-4 text-center md:text-left">
-              <span className="text-[10px] md:text-[10px] font-saira font-bold text-gray-500 uppercase tracking-widest mb-1">
+              <span className="text-[10px] md:text-[10px] font-saira font-bold text-track-cyan uppercase tracking-widest mb-1">
                 Maks. Obrtni moment
               </span>
-              <span className="text-sm md:text-base font-zuume font-bold text-black">
+              <span className="text-sm md:text-base font-saira font-bold not-italic text-gray-500">
                 {motorcycle.max_torque || 'N/A'}
               </span>
             </div>
@@ -239,10 +239,10 @@ export default async function MotorcyclePage({ params }: { params: Promise<{ slu
         {/* Introduction Section */}
         <section className="bg-white w-full py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-zuume font-bold text-black uppercase tracking-tight mb-6">
+            <h2 className="text-2xl md:text-3xl font-saira font-bold not-italic text-black uppercase tracking-tight mb-6">
               OPIS
             </h2>
-            <h3 className="text-lg md:text-xl font-zuume font-bold text-black mb-4">
+            <h3 className="text-lg md:text-xl font-saira font-bold not-italic text-black mb-4">
               Keeway {cleanName}
             </h3>
             <ExpandableDescription text={motorcycle.short_description || ""} />

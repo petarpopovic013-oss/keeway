@@ -125,6 +125,7 @@ export async function createMotorcycle(data: Omit<Motorcycle, 'id' | 'created_at
 
   revalidatePath('/admin')
   revalidatePath('/katalog')
+  revalidatePath('/', 'layout')
   return { success: true }
 }
 
@@ -141,6 +142,7 @@ export async function updateMotorcycle(id: string, data: Partial<Omit<Motorcycle
 
   revalidatePath('/admin')
   revalidatePath('/katalog')
+  revalidatePath('/', 'layout')
   return { success: true }
 }
 
@@ -157,5 +159,6 @@ export async function deleteMotorcycle(id: string) {
 
   revalidatePath('/admin')
   revalidatePath('/katalog')
+  revalidatePath('/', 'layout')
   return { success: true }
 }
