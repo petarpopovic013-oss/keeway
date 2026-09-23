@@ -73,7 +73,7 @@ export default function Footer() {
         {/* Center Logo - LET'S RIDE TOGETHER */}
         <div className="flex justify-center mb-16 border-b border-white/20 pb-12">
           <div className="text-center font-zuume text-4xl lg:text-5xl text-white uppercase tracking-wider">
-            <span className="font-light">LET'S RIDE </span>
+            <span className="font-light">LET&apos;S RIDE </span>
             <span className="font-bold">TOGETHER</span>
           </div>
         </div>
@@ -82,6 +82,9 @@ export default function Footer() {
         <div className="flex justify-center items-center">
           <div className="text-xs md:text-[11px] font-saira text-white/80 text-center">
             <p>Keeway © Copyright {new Date().getFullYear()} Keeway — Član DDM Grupe. Sva prava zadržana.</p>
+            <p className="mt-2 text-[10px] uppercase tracking-[0.16em] text-white/60">
+              Developed by <span className="text-white">Petar Popović</span>
+            </p>
           </div>
         </div>
         
