@@ -1,6 +1,7 @@
 "use client";
 
-import { Play } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Play } from "lucide-react";
 
 export default function FeaturedModels() {
   return (
@@ -11,12 +12,12 @@ export default function FeaturedModels() {
         <div className="relative w-full md:w-1/2 h-full flex items-end p-8 md:p-16 group cursor-pointer overflow-hidden bg-black">
           <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500 z-10" />
           <div className="relative z-20 text-white transition-transform duration-700 group-hover:-translate-y-2">
-            <h2 className="leading-[0.95] mb-1 text-white font-normal ![text-shadow:none] ![-webkit-text-stroke:0]" style={{ fontSize: "clamp(1.8rem, 5vw, 4rem)" }}>IT'S NOT DIFFERENT</h2>
-            <p className="text-white/90 mt-2 mb-4" style={{ fontSize: "clamp(0.9rem, 2vw, 1.5rem)" }}>THE ALL-NEW ICON125I, IT'S ORIGINAL</p>
+            <h2 className="leading-[0.95] mb-1 text-white font-normal ![text-shadow:none] ![-webkit-text-stroke:0]" style={{ fontSize: "clamp(1.8rem, 5vw, 4rem)" }}>IT’S NOT DIFFERENT</h2>
+            <p className="text-white/90 mt-2 mb-4" style={{ fontSize: "clamp(0.9rem, 2vw, 1.5rem)" }}>THE ALL-NEW ICON125I, IT’S ORIGINAL</p>
             <div className="flex items-center gap-2">
-              <span className="btn-view-more text-white/80" style={{ fontSize: "clamp(0.8rem, 1.5vw, 1.3rem)" }}>VIEW MORE &gt;&gt;</span>
+              <Link href="/motocikli/icon-125s" className="btn-view-more inline-flex items-center gap-2 text-white/80" style={{ fontSize: "clamp(0.8rem, 1.5vw, 1.3rem)" }}>VIEW MORE <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
             </div>
-            <button className="mt-4 bg-white/20 hover:bg-white/40 transition-colors w-12 h-8 rounded-lg flex items-center justify-center backdrop-blur-sm">
+            <button aria-label="Pusti Keeway ICON125i video" className="mt-4 bg-white/20 hover:bg-white/40 transition-colors w-12 h-8 rounded-lg flex items-center justify-center backdrop-blur-sm">
               <Play fill="white" className="w-4 h-4" />
             </button>
           </div>
@@ -27,11 +28,11 @@ export default function FeaturedModels() {
           <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500 z-10" />
           <div className="relative z-20 text-white transition-transform duration-700 group-hover:-translate-y-2">
             <h2 className="leading-[0.95] mb-1 text-white font-normal ![text-shadow:none] ![-webkit-text-stroke:0]" style={{ fontSize: "clamp(1.8rem, 5vw, 4rem)" }}>URBAN WITH A WILD SOUL</h2>
-            <p className="text-white/90 mt-2 mb-4" style={{ fontSize: "clamp(0.9rem, 2vw, 1.5rem)" }}>ALL NEW KEEWAY'S XDV125 EVO PRO</p>
+            <p className="text-white/90 mt-2 mb-4" style={{ fontSize: "clamp(0.9rem, 2vw, 1.5rem)" }}>ALL NEW KEEWAY’S XDV125 EVO PRO</p>
             <div className="flex items-center gap-2">
-              <span className="btn-view-more text-white/80" style={{ fontSize: "clamp(0.8rem, 1.5vw, 1.3rem)" }}>VIEW MORE &gt;&gt;</span>
+              <Link href="/motocikli/xdv-125-evo-pro" className="btn-view-more inline-flex items-center gap-2 text-white/80" style={{ fontSize: "clamp(0.8rem, 1.5vw, 1.3rem)" }}>VIEW MORE <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
             </div>
-            <button className="mt-4 bg-white/20 hover:bg-white/40 transition-colors w-12 h-8 rounded-lg flex items-center justify-center backdrop-blur-sm">
+            <button aria-label="Pusti Keeway XDV125 EVO PRO video" className="mt-4 bg-white/20 hover:bg-white/40 transition-colors w-12 h-8 rounded-lg flex items-center justify-center backdrop-blur-sm">
               <Play fill="white" className="w-4 h-4" />
             </button>
           </div>
@@ -45,7 +46,7 @@ export default function FeaturedModels() {
           <h2 className="leading-[0.95] mb-2 text-white drop-shadow-md font-normal ![text-shadow:none] ![-webkit-text-stroke:0]" style={{ fontSize: "clamp(1.8rem, 5vw, 4rem)" }}>RKR 250</h2>
           <p className="text-white/90 mt-2 mb-4 drop-shadow-md" style={{ fontSize: "clamp(0.9rem, 2vw, 1.5rem)" }}>OWN THE ROAD, FEEL THE RUSH</p>
           <div className="flex items-center justify-center gap-2 mt-2">
-            <span className="btn-view-more text-white/80" style={{ fontSize: "clamp(0.8rem, 1.5vw, 1.3rem)" }}>VIEW MORE &gt;&gt;</span>
+            <Link href="/motocikli/rks-125" className="btn-view-more inline-flex items-center gap-2 text-white/80" style={{ fontSize: "clamp(0.8rem, 1.5vw, 1.3rem)" }}>VIEW MORE <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
           </div>
         </div>
       </div>

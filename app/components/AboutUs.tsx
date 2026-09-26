@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export default function AboutUs() {
   return (
@@ -50,12 +51,10 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <Link href="#" className="inline-flex items-center gap-4 group">
+          <Link href="/o-nama" className="inline-flex items-center gap-4 group">
             <span className="btn-view-more text-sm uppercase tracking-wider group-hover:text-[#F54308] transition-colors">OTKRIJTE NAŠU PRIČU</span>
             <div className="w-12 h-12 rounded-full border border-black/20 flex items-center justify-center group-hover:border-[#F54308] group-hover:bg-[#F54308]/10 transition-all duration-300">
-              <svg width="16" height="16" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-black group-hover:text-[#F54308] transform group-hover:translate-x-1 transition-all duration-300">
-                <path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <ArrowRight aria-hidden="true" className="h-4 w-4 text-black transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#F54308]" />
             </div>
           </Link>
         </div>

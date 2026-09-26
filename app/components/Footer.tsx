@@ -44,8 +44,8 @@ export default function Footer() {
           <div className="flex flex-col gap-3 text-center sm:text-left">
             <h4 className="font-zuume text-white font-bold text-lg mb-2">KEEWAY SRBIJA</h4>
             <Link href="/novosti" className="text-xs font-saira text-white/90 hover:text-white transition-colors">NOVOSTI</Link>
-            <Link href="/stores" className="text-xs font-saira text-white/90 hover:text-white transition-colors">PRODAJNA MESTA</Link>
-            <Link href="/contact" className="text-xs font-saira text-white/90 hover:text-white transition-colors">POSTANITE DISTRIBUTER</Link>
+            <Link href="/prodajna-mesta" className="text-xs font-saira text-white/90 hover:text-white transition-colors">PRODAJNA MESTA</Link>
+            <Link href="/kontakt" className="text-xs font-saira text-white/90 hover:text-white transition-colors">POSTANITE DISTRIBUTER</Link>
           </div>
 
           {/* Column 2 */}
@@ -60,13 +60,14 @@ export default function Footer() {
           {/* Column 3 */}
           <div className="flex flex-col gap-3 text-center sm:text-left">
             <h4 className="font-zuume text-white font-bold text-lg mb-2">KOMPANIJA</h4>
-            <Link href="/about" className="text-xs font-saira text-white/90 hover:text-white transition-colors">O NAMA</Link>
+            <Link href="/o-nama" className="text-xs font-saira text-white/90 hover:text-white transition-colors">O NAMA</Link>
+            <Link href="/dodatna-oprema" className="text-xs font-saira text-white/90 hover:text-white transition-colors">DODATNA OPREMA</Link>
           </div>
 
           {/* Column 4 */}
           <div className="flex flex-col gap-3 text-center sm:text-left">
             <h4 className="font-zuume text-white font-bold text-lg mb-2">KORISNIČKA PODRŠKA</h4>
-            <Link href="/contact" className="text-xs font-saira text-white/90 hover:text-white transition-colors">KONTAKTIRAJTE NAS</Link>
+            <Link href="/kontakt" className="text-xs font-saira text-white/90 hover:text-white transition-colors">KONTAKTIRAJTE NAS</Link>
           </div>
         </div>
 

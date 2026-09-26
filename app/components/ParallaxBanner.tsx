@@ -1,6 +1,7 @@
 "use client";
 
-import { Play } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Play } from "lucide-react";
 
 export default function ParallaxBanner() {
   return (
@@ -25,8 +26,8 @@ export default function ParallaxBanner() {
             GDE PRESTAJE ASFALT, POČINJE TVOJA PRIČA. OTKRIJ POTPUNO NOVU DIMENZIJU VOŽNJE I OSETI PRAVU SLOBODU NA DVA TOČKA.
           </p>
           <div className="flex flex-col items-center gap-4 cursor-pointer">
-            <span className="btn-view-more text-white hover:text-[#F54308] transition-colors uppercase tracking-widest">SAZNAJ VIŠE &gt;&gt;</span>
-            <button className="bg-white/10 hover:bg-white/20 border border-white/30 transition-colors w-16 h-16 rounded-full flex items-center justify-center backdrop-blur-md group-hover:border-[#F54308] group-hover:bg-[#F54308]/20">
+            <Link href="/o-nama" className="btn-view-more inline-flex items-center gap-2 text-white hover:text-[#F54308] transition-colors uppercase tracking-widest">SAZNAJ VIŠE <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
+            <button aria-label="Pusti Keeway video" className="bg-white/10 hover:bg-white/20 border border-white/30 transition-colors w-16 h-16 rounded-full flex items-center justify-center backdrop-blur-md group-hover:border-[#F54308] group-hover:bg-[#F54308]/20">
               <Play fill="white" className="w-6 h-6 ml-1 group-hover:fill-[#F54308]" />
             </button>
           </div>

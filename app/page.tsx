@@ -6,6 +6,13 @@ import ContactForm from "./components/ContactForm";
 
 import Footer from "./components/Footer";
 
+export const metadata: Metadata = {
+  title: "Keeway motocikli i skuteri u Srbiji",
+  description: "Otkrijte Keeway motocikle i skutere u Srbiji — moderne modele, pristupačnu mobilnost, dodatnu opremu i ovlašćenu prodajno-servisnu mrežu.",
+  alternates: { canonical: "/" },
+  openGraph: { url: "/", title: "Keeway motocikli i skuteri u Srbiji", description: "Istražite Keeway modele, dodatnu opremu, prodajna mesta i ovlašćene servise u Srbiji." },
+};
+
 export default function Home() {
   return (
     <>
@@ -21,3 +28,4 @@ export default function Home() {
     </>
   );
 }
+import type { Metadata } from "next";

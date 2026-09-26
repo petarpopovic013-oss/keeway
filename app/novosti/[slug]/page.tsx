@@ -1,10 +1,27 @@
 import Header from '@/app/components/Header'
 import Footer from '@/app/components/Footer'
-import { getNewsBySlug } from '@/app/actions/news'
+import { getNews, getNewsBySlug } from '@/app/actions/news'
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, Calendar } from 'lucide-react'
+import StructuredData from '@/app/components/StructuredData'
+import { absoluteUrl, truncateDescription } from '@/app/lib/seo'
+
+export async function generateStaticParams() {
+  const news = await getNews()
+  return news.map((item) => ({ slug: item.slug }))
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const item = await getNewsBySlug(slug)
+  if (!item) return { title: 'Vest nije pronađena', robots: { index: false, follow: false } }
+  const description = truncateDescription(item.content)
+  const pathname = `/novosti/${item.slug}`
+  return { title: item.title, description, alternates: { canonical: pathname }, openGraph: { type: 'article', locale: 'sr_RS', url: pathname, title: item.title, description, publishedTime: new Date(item.date).toISOString(), images: item.images?.map((image) => ({ url: image, alt: item.title })) }, twitter: { card: 'summary_large_image', title: item.title, description, images: item.images?.[0] ? [item.images[0]] : undefined } }
+}
 
 export default async function NewsDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params
@@ -17,9 +34,13 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
   // Odvajamo prvu sliku kao hero sliku, ostale idu ispod
   const heroImage = newsItem.images && newsItem.images.length > 0 ? newsItem.images[0] : null
   const galleryImages = newsItem.images && newsItem.images.length > 1 ? newsItem.images.slice(1) : []
+  const articleUrl = absoluteUrl(`/novosti/${newsItem.slug}`)
+  const articleStructuredData = { "@context": "https://schema.org", "@type": "NewsArticle", "@id": `${articleUrl}#article`, headline: newsItem.title, description: truncateDescription(newsItem.content), image: newsItem.images || [], datePublished: new Date(newsItem.date).toISOString(), dateModified: new Date(newsItem.created_at || newsItem.date).toISOString(), inLanguage: "sr-RS", mainEntityOfPage: articleUrl, author: { "@id": `${absoluteUrl("/")}#organization` }, publisher: { "@id": `${absoluteUrl("/")}#organization` } }
+  const breadcrumbStructuredData = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Naslovna", item: absoluteUrl("/") }, { "@type": "ListItem", position: 2, name: "Novosti", item: absoluteUrl("/novosti") }, { "@type": "ListItem", position: 3, name: newsItem.title, item: articleUrl }] }
 
   return (
     <>
+      <StructuredData data={[articleStructuredData, breadcrumbStructuredData]} />
       <Header />
       <main className="flex-grow flex flex-col w-full bg-white pt-24 min-h-screen selection:bg-track-cyan selection:text-black">
         <article className="container mx-auto px-6 max-w-5xl py-20">

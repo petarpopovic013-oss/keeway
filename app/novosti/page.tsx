@@ -5,6 +5,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Newspaper, ArrowRight } from 'lucide-react'
 
+export const metadata: Metadata = {
+  title: 'Novosti',
+  description: 'Najnovije Keeway vesti iz Srbije: novi motocikli i skuteri, predstavljanja, događaji, ponude i priče iz sveta vožnje.',
+  alternates: { canonical: '/novosti' },
+  openGraph: { url: '/novosti', title: 'Keeway novosti', description: 'Novi modeli, događaji i aktuelnosti iz sveta Keeway motocikala i skutera.' },
+}
+
 export const dynamic = 'force-dynamic'
 
 export default async function NewsPage() {
@@ -82,3 +89,4 @@ export default async function NewsPage() {
     </>
   )
 }
+import type { Metadata } from 'next'

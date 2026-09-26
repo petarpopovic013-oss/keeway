@@ -63,7 +63,7 @@ export default function Header() {
     };
   }, [isMobileMenuOpen]);
 
-  const isSolid = isScrolled || (pathname !== "/" && pathname !== "/about") || isMobileMenuOpen;
+  const isSolid = isScrolled || (pathname !== "/" && pathname !== "/o-nama") || isMobileMenuOpen;
 
   return (
     <header
@@ -143,19 +143,19 @@ export default function Header() {
           <Link href="/" className={`hover:text-track-cyan transition-colors ${isSolid ? "text-black" : "text-white"}`}>
             NASLOVNA
           </Link>
-          <Link href="/about" className={`hover:text-track-cyan transition-colors ${isSolid ? "text-black" : "text-white"}`}>
+          <Link href="/o-nama" className={`hover:text-track-cyan transition-colors ${isSolid ? "text-black" : "text-white"}`}>
             O NAMA
           </Link>
           <Link href="/novosti" className={`hover:text-track-cyan transition-colors ${isSolid ? "text-black" : "text-white"}`}>
             NOVOSTI
           </Link>
-          <Link href="/equipment" className={`hover:text-track-cyan transition-colors ${isSolid ? "text-black" : "text-white"}`}>
+          <Link href="/dodatna-oprema" className={`hover:text-track-cyan transition-colors ${isSolid ? "text-black" : "text-white"}`}>
             DODATNA OPREMA
           </Link>
-          <Link href="/stores" className={`hover:text-track-cyan transition-colors ${isSolid ? "text-black" : "text-white"}`}>
+          <Link href="/prodajna-mesta" className={`hover:text-track-cyan transition-colors ${isSolid ? "text-black" : "text-white"}`}>
             PRODAJNA MESTA I LOKACIJE SERVISA
           </Link>
-          <Link href="/contact" className={`hover:text-track-cyan transition-colors ${isSolid ? "text-black" : "text-white"}`}>
+          <Link href="/kontakt" className={`hover:text-track-cyan transition-colors ${isSolid ? "text-black" : "text-white"}`}>
             KONTAKT
           </Link>
         </nav>
@@ -203,8 +203,8 @@ export default function Header() {
           </Link>
 
           <Link
-            href="/about"
-            className={`flex items-center justify-between p-6 py-5 border-b ${pathname === '/about' ? 'text-[#F54308] border-[#F54308]' : 'text-black border-gray-100'}`}
+            href="/o-nama"
+            className={`flex items-center justify-between p-6 py-5 border-b ${pathname === '/o-nama' ? 'text-[#F54308] border-[#F54308]' : 'text-black border-gray-100'}`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <span className="font-zuume font-normal italic text-base">O nama</span>
@@ -221,8 +221,8 @@ export default function Header() {
           </Link>
 
           <Link
-            href="/equipment"
-            className={`flex items-center justify-between p-6 py-5 border-b ${pathname === '/equipment' ? 'text-[#F54308] border-[#F54308]' : 'text-black border-gray-100'}`}
+            href="/dodatna-oprema"
+            className={`flex items-center justify-between p-6 py-5 border-b ${pathname === '/dodatna-oprema' ? 'text-[#F54308] border-[#F54308]' : 'text-black border-gray-100'}`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <span className="font-zuume font-normal italic text-base">Dodatna oprema</span>
@@ -230,8 +230,8 @@ export default function Header() {
           </Link>
 
           <Link
-            href="/stores"
-            className={`flex items-center justify-between p-6 py-5 border-b ${pathname === '/stores' ? 'text-[#F54308] border-[#F54308]' : 'text-black border-gray-100'}`}
+            href="/prodajna-mesta"
+            className={`flex items-center justify-between p-6 py-5 border-b ${pathname === '/prodajna-mesta' ? 'text-[#F54308] border-[#F54308]' : 'text-black border-gray-100'}`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <span className="font-zuume font-normal italic text-base">Prodajna mesta i servisi</span>
@@ -239,8 +239,8 @@ export default function Header() {
           </Link>
 
           <Link
-            href="/contact"
-            className={`flex items-center justify-between p-6 py-5 border-b ${pathname === '/contact' ? 'text-[#F54308] border-[#F54308]' : 'text-black border-gray-100'}`}
+            href="/kontakt"
+            className={`flex items-center justify-between p-6 py-5 border-b ${pathname === '/kontakt' ? 'text-[#F54308] border-[#F54308]' : 'text-black border-gray-100'}`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <span className="font-zuume font-normal italic text-base">Kontakt</span>

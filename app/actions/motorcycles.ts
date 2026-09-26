@@ -124,8 +124,9 @@ export async function createMotorcycle(data: Omit<Motorcycle, 'id' | 'created_at
   }
 
   revalidatePath('/admin')
-  revalidatePath('/katalog')
-  revalidatePath('/', 'layout')
+  revalidatePath('/')
+  revalidatePath(`/motocikli/${data.slug}`)
+  revalidatePath('/sitemap.xml')
   return { success: true }
 }
 
@@ -141,12 +142,14 @@ export async function updateMotorcycle(id: string, data: Partial<Omit<Motorcycle
   }
 
   revalidatePath('/admin')
-  revalidatePath('/katalog')
-  revalidatePath('/', 'layout')
+  revalidatePath('/')
+  if (data.slug) revalidatePath(`/motocikli/${data.slug}`)
+  revalidatePath('/sitemap.xml')
   return { success: true }
 }
 
 export async function deleteMotorcycle(id: string) {
+  const motorcycle = await getMotorcycleById(id)
   const { error } = await supabaseAdmin
     .from('keeway_motorcycles')
     .delete()
@@ -158,7 +161,8 @@ export async function deleteMotorcycle(id: string) {
   }
 
   revalidatePath('/admin')
-  revalidatePath('/katalog')
-  revalidatePath('/', 'layout')
+  revalidatePath('/')
+  if (motorcycle?.slug) revalidatePath(`/motocikli/${motorcycle.slug}`)
+  revalidatePath('/sitemap.xml')
   return { success: true }
 }

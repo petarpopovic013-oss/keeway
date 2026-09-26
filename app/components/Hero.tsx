@@ -1,6 +1,7 @@
 "use client";
 
-import { X } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, X } from "lucide-react";
 import { useState } from "react";
 
 export default function Hero() {
@@ -41,13 +42,14 @@ export default function Hero() {
         </p>
 
         {/* View More link — Saira italic */}
-        <a
-          href="/motocikli"
-          className="btn-view-more text-white/80 mb-3"
+        <Link
+          href="/motocikli/rks-125"
+          className="btn-view-more mb-3 inline-flex items-center gap-2 text-white/80"
           style={{ fontSize: "clamp(1.1rem, 2vw, 1.3rem)" }}
         >
-          otkrij više &gt;&gt;
-        </a>
+          otkrij više
+          <ArrowRight aria-hidden="true" className="h-4 w-4" />
+        </Link>
 
         {/* YouTube play button */}
         <button

@@ -34,12 +34,12 @@ export default function ContactPageForm() {
           <div className="text-left mb-16">
             <div className="flex items-center justify-start gap-4 mb-6">
               <div className="w-12 h-[2px] bg-[#F54308]"></div>
-              <h2 className="text-xl uppercase tracking-widest text-[#F54308] font-normal ![text-shadow:none] ![-webkit-text-stroke:0]">KONTAKT</h2>
+              <p className="text-xl uppercase tracking-widest text-[#F54308] font-normal">KONTAKT</p>
             </div>
-            <h3 className="text-4xl md:text-5xl mb-4 leading-tight text-black font-zuume italic uppercase font-normal">
+            <h1 className="text-4xl md:text-5xl mb-4 leading-tight text-black font-zuume italic uppercase font-normal">
               IMATE PITANJE? <br />
               STUPITE U KONTAKT SA NAMA.
-            </h3>
+            </h1>
             <p className="text-lg text-gray-600 mt-6 uppercase">
               POPUNITE FORMU ISPOD I NAŠ TIM ĆE VAM ODGOVORITI U NAJKRAĆEM MOGUĆEM ROKU.
             </p>
