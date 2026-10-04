@@ -23,11 +23,11 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <span className="font-saira text-xs mr-4 uppercase">Pronađite nas na društvenim mrežama:</span>
             <a
-              href="https://www.instagram.com/ddmcompany.ns/"
+              href="https://www.instagram.com/keeway.rs/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 bg-white flex items-center justify-center hover:bg-gray-100 transition-colors text-primary rounded-sm"
-              aria-label="Instagram @ddmcompany.ns"
+              aria-label="Instagram @keeway.rs"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>

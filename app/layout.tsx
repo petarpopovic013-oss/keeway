@@ -70,7 +70,7 @@ const organizationStructuredData = {
   logo: absoluteUrl("/logos/Keeway-Worldmark-Orange.png"), image: absoluteUrl("/heroimage.png"), description: DEFAULT_DESCRIPTION,
   email: "ddmcompany@gmail.com", telephone: "+381641334589",
   address: { "@type": "PostalAddress", streetAddress: "Dr. Svetislava Kasapinovića 9", addressLocality: "Novi Sad", addressCountry: "RS" },
-  areaServed: { "@type": "Country", name: "Srbija" }, sameAs: ["https://www.instagram.com/ddmcompany.ns/"],
+  areaServed: { "@type": "Country", name: "Srbija" }, sameAs: ["https://www.instagram.com/keeway.rs/"],
   parentOrganization: { "@type": "Organization", name: "DDM Company doo", url: "https://ddmcompany.rs" },
 };
 const websiteStructuredData = { "@context": "https://schema.org", "@type": "WebSite", "@id": `${SITE_URL}/#website`, url: SITE_URL, name: SITE_NAME, description: DEFAULT_DESCRIPTION, inLanguage: "sr-RS", publisher: { "@id": `${SITE_URL}/#organization` } };
