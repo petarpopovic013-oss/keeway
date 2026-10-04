@@ -2,11 +2,25 @@
 
 import { supabaseAdmin } from '@/app/utils/supabase/server'
 import sharp from 'sharp'
+import { requireAdmin } from '@/app/utils/admin-session'
+
+const ALLOWED_IMAGE_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp'])
+const MAX_IMAGE_BYTES = 8 * 1024 * 1024
 
 export async function uploadImage(formData: FormData) {
-  const file = formData.get('file') as File
-  if (!file) {
+  await requireAdmin()
+
+  const file = formData.get('file')
+  if (!(file instanceof File) || file.size === 0) {
     return { error: 'Nije priložen fajl.' }
+  }
+
+  if (!ALLOWED_IMAGE_TYPES.has(file.type)) {
+    return { error: 'Dozvoljeni formati su JPEG, PNG i WEBP.' }
+  }
+
+  if (file.size > MAX_IMAGE_BYTES) {
+    return { error: 'Slika može imati najviše 8 MB.' }
   }
 
   try {
@@ -44,11 +58,17 @@ export async function uploadImage(formData: FormData) {
 }
 
 export async function deleteImage(path: string) {
+  await requireAdmin()
+
   // Ako je prosleđen puni URL, izvuci samo putanju unutar bucketa
   let filePath = path
   const searchString = '/storage/v1/object/public/keeway_images/'
   if (path.includes(searchString)) {
     filePath = path.split(searchString)[1]
+  }
+
+  if (!filePath || filePath.includes('..')) {
+    return { error: 'Neispravna putanja slike.' }
   }
 
   const { error } = await supabaseAdmin.storage
